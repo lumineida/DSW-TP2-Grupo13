@@ -1,0 +1,81 @@
+.sidebar {
+  background: var(--bg-tertiary);
+  border-right: 1px solid var(--border-color);
+  padding: 1.5rem 1rem;
+  box-shadow: var(--shadow-sm);
+  width: 150px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sidebar .logo {
+  width: 70%;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar nav li.anidado {
+  margin-left: 1.5rem;
+  font-size: 0.97em;
+}
+
+.sidebar nav a,
+.sidebar nav button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  font: inherit;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.sidebar nav a:hover,
+.sidebar nav button:hover {
+  background: var(--bg-primary);
+  color: var(--primary-color);
+}
+
+.sidebar nav a.active {
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+}
+
+.sidebar nav .submenu {
+  padding-left: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.sidebar nav .submenu li {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar nav .submenu a {
+  font-size: 0.96em;
+  padding-left: 1.5rem;
+}
+
+.sidebar nav .submenu a.active {
+  background: var(--accent-color);
+  color: #fff;
+}
