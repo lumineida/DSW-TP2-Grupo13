@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import '../styles/sidebar.css';
+import { useState } from "react";
+import "../styles/sidebar.css";
 
 const pages = [
   { path: "/", name: "Inicio", nivel: "1" },
@@ -14,19 +15,37 @@ const pages = [
 ];
 
 function Sidebar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <aside className="sidebar">
+    <>
+      {/* Botón hamburguesa (solo visible en pantallas pequeñas, via CSS) */}
+      <button className="menu-toggle" onClick={() => setOpen(!open)}>
+        ☰
+      </button>
+
+      <aside className={`sidebar ${open ? "open" : ""}`}>
         <img src={logo} alt="Logo" className="logo" />
         <nav>
-            <ul>
+          <ul>
             {pages.map((p) => (
-                <li key={p.path} className={p.nivel === "2" ? "anidado" : ""}>
-                <NavLink to={p.path} className={({ isActive }) => (isActive ? "active" : "")}>{p.name}</NavLink>
-                </li>
+              <li
+                key={p.path}
+                className={p.nivel === "2" ? "anidado" : ""}
+              >
+                <NavLink
+                  to={p.path}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setOpen(false)} // cierra el menú al hacer clic
+                >
+                  {p.name}
+                </NavLink>
+              </li>
             ))}
-            </ul>
+          </ul>
         </nav>
       </aside>
+    </>
   );
 }
 

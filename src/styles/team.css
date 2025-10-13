@@ -1,0 +1,274 @@
+/* -----------------------
+   TEAM GRID 
+   ----------------------- */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  max-width: 1200px;
+}
+
+.member-card {
+  position: relative;
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Imagen */
+.card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: brightness(0.95);
+}
+
+.member-card:hover .card-image img {
+  transform: scale(1.08);
+  filter: brightness(1);
+}
+
+/* Overlay con blur */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.member-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  color: #fff;
+  text-align: center;
+}
+
+.overlay-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.overlay-specialty {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Contenido textual */
+.card-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.member-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.member-role {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.member-description {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Etiquetas de habilidades */
+.member-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.skill-tag {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Centrado del botón en la vista de integrante */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.button-container .btn,
+.button-container button {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+}
+
+/* -----------------------
+   TEAM GRID - RESPONSIVE FIXED
+   ----------------------- */
+
+/* <=400px — Celulares pequeños */
+@media (max-width: 400px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 0 1rem;
+  }
+}
+
+/* 401–899px — Tablets y pantallas medianas */
+@media (min-width: 401px) and (max-width: 899px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+}
+
+/* 900–1199px — Laptops */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+}
+
+/* >=1200px — Escritorio grande */
+@media (min-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 1300px;
+    margin: 3rem auto;
+  }
+}
+
+/* -----------------------
+   VISTA DETALLE DE INTEGRANTE
+   ----------------------- */
+
+.member-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.member-detail .card-image img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.member-detail .card-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.member-detail .member-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.member-detail .member-role {
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.member-detail .member-description {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* -----------------------
+         boton mas info
+   ----------------------- */
+.btn-more {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-more:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+
+/* Efecto shimmer sutil */
+.image-overlay-detalle {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.member-detail:hover .image-overlay-detalle {
+  transform: translateX(100%);
+}
+
+/*  Quitar bullets de listas */
+.member-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0;
+}
+
+.member-section li {
+  padding: 0.25rem 0;
+  color: var(--text-light);
+}

@@ -26,6 +26,9 @@
   --radius-xl: 1rem;
 }
 
+/* -----------------------
+   Global / Layout
+   ----------------------- */
 body {
   margin: 0;
   font-family: 'Poppins', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -65,7 +68,9 @@ main {
   color: var(--text-primary);
 }
 
-
+/* -----------------------
+   Buttons
+   ----------------------- */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -94,25 +99,19 @@ main {
   transition: left 0.5s;
 }
 
-.btn-primary:hover::before {
-  left: 100%;
-}
+.btn-primary:hover::before { left: 100%; }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
 }
 
-.btn-primary svg {
-  transition: transform 0.3s ease;
-}
+.btn-primary svg { transition: transform 0.3s ease; }
+.btn-primary:hover svg { transform: translateX(4px); }
 
-.btn-primary:hover svg {
-  transform: translateX(4px);
-}
-        
-
-/* Hero Section */
+/* -----------------------
+   Hero
+   ----------------------- */
 .hero {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -125,35 +124,19 @@ main {
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
   z-index: 1;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+.hero-content { position: relative; z-index: 2; margin: 0 auto; padding: 0 1rem; }
 
-.hero h2 {
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
+.hero h2 { font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.hero p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
 
-.hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-
-/* Footer */
+/* -----------------------
+   Footer
+   ----------------------- */
 footer {
   background: var(--text-primary);
   color: white;
@@ -162,13 +145,11 @@ footer {
   justify-content: center;
 }
 
-.footer-content {
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+.footer-content { margin: 0 auto; padding: 0 1rem; }
 
-
-/* Team Grid */
+/* -----------------------
+   Team / Member Cards
+   ----------------------- */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -176,7 +157,6 @@ footer {
   margin-top: 3rem;
 }
 
-/* Member Cards */
 .member-card {
   background: var(--bg-primary);
   border-radius: var(--radius-xl);
@@ -185,7 +165,6 @@ footer {
   transition: all 0.4s ease;
   border: 1px solid var(--border-color);
   position: relative;
-  transform: translateY(0);
 }
 
 .member-card:hover {
@@ -195,30 +174,18 @@ footer {
   cursor: pointer;
 }
 
-.card-image {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-}
-
 .card-image img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-
   transition: transform 0.4s ease;
 }
 
-.member-card:hover .card-image img {
-  transform: scale(1.05);
-}
+.member-card:hover .card-image img { transform: scale(1.05); }
 
 .card-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: linear-gradient(45deg, rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.8));
   display: flex;
   align-items: center;
@@ -227,165 +194,223 @@ footer {
   transition: opacity 0.3s ease;
 }
 
-.member-card:hover .card-overlay {
-  opacity: 1;
-}
+.member-card:hover .card-overlay { opacity: 1; }
 
 .view-profile {
   color: white;
   font-weight: 600;
   font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.card-content {
-  padding: 2rem;
-}
-
-.card-content h4 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0;
-}
-
-.member-role {
-  color: var(--accent-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0.25rem 0;
-}
-
-.member-theme {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.member-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.skill {
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-md);
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-/* BITACORA PAGE STYLES */
+/* -----------------------
+   Timeline / Bitácora
+   ----------------------- */
 .bitacora-content {
-    padding: 2rem 0;
-    background: var(--bg-primary);
+  padding: 2rem 0;
+  background: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+}
+
+.bitacora-content .container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+  margin: 0 auto;
 }
 
 .timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 15px;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  /* valor por defecto: centrado */
+  --timeline-x: 50%;
 }
 
 .timeline::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background: var(--accent-color);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -2px;
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: var(--accent-color);
+  top: 0;
+  bottom: 0;
+  left: var(--timeline-x);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  60% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); }
 }
 
 .timeline-item {
-    position: relative;
-    background: transparent;
-    margin-bottom: 3rem;
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: 1.5rem;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .timeline-marker {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: var(--accent-color);
-    border: 4px solid var(--bg-primary);
-    border-radius: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  left: var(--timeline-x);
+  transform: translate(calc(-50% - 0px), -50%);
+  width: 60px;
+  height: 60px;
+  background: var(--accent-color);
+  border: 5px solid var(--bg-primary);
+  border-radius: 50%;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  animation: popIn 0.6s ease forwards;
+  pointer-events: none;
+}
+
+.timeline-marker img,
+.timeline-marker svg {
+  width: 60%;
+  height: 60%;
+  display: block;
 }
 
 .timeline-content {
-    background: var(--bg-secondary);
-    border-radius: var(--radius-xl);
-    padding: 2rem;
-    margin-left: calc(50% + 40px);
-    box-shadow: var(--shadow-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-left: calc(50% + 40px);
+  box-shadow: var(--shadow-md);
+  transition: all 0.35s ease;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    margin-left: 0;
-    margin-right: calc(50% + 40px);
+  margin-left: 0;
+  margin-right: calc(50% + 40px);
 }
 
 .timeline-date {
-    color: var(--accent-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .timeline-description h4 {
-    color: var(--primary-color);
-    margin: 1.5rem 0 0.5rem 0;
+  color: var(--primary-color);
+  margin: 1.5rem 0 0.5rem 0;
 }
 
-.timeline-description ul {
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-}
-
+/* -----------------------
+   Lecciones aprendidas
+   ----------------------- */
 .lessons-learned {
-    padding: 5rem 0;
-    background: var(--bg-secondary);
+  padding: 5rem 0;
+  background: var(--bg-secondary);
 }
 
 .lessons-learned h3 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .lessons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 0 1rem;
 }
 
 .lesson-card {
-    background: var(--bg-primary);
-    padding: 2rem;
-    border-radius: var(--radius-xl);
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease;
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
 }
 
-.lesson-card:hover {
-    transform: translateY(-5px);
+.lesson-card:hover { transform: translateY(-5px); }
+
+.lesson-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+/* -----------------------
+   Breakpoints
+   ----------------------- */
+
+/* <=400px */
+@media (max-width: 400px) {
+  .hero h2 { font-size: 1.3rem; }
+  .hero p { font-size: 0.9rem; padding: 0 0.5rem; }
+
+  .timeline { --timeline-x: 25px; }
+  .timeline::after { transform: none; }
+  .timeline-marker { width: 45px; height: 45px; }
+  .timeline-content {
+    margin: 0 1rem 0 65px !important;
+    width: calc(100% - 85px);
+    max-width: none;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+  }
 }
 
-.lesson-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+/* 401–899px */
+@media (min-width: 401px) and (max-width: 899px) {
+  .hero h2 { font-size: 1.8rem; }
+  .hero p { font-size: 1rem; }
+
+  .timeline { --timeline-x: 40px; }
+  .timeline::after { transform: none; }
+
+
+  .timeline-content {
+    box-sizing: border-box;
+    margin-left: 85px;
+    margin-right: 24px;
+    width: auto;
+    max-width: none;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 24px;
+    margin-right: 85px;
+    width: auto;
+  }
+
+  .bitacora-content .container {
+    overflow: visible;
+    padding: 0 1.5rem;
+  }
+}
+
+/* >=1200px */
+@media (min-width: 1200px) {
+  .bitacora-content .container { max-width: 1200px; }
+  .timeline-content {
+    padding: 2.5rem 3rem;
+    font-size: 1.05rem;
+    max-width: 700px;
+  }
+  .timeline-marker { width: 64px; height: 64px; }
+  .hero h2 { font-size: 2.5rem; }
+  .hero p { font-size: 1.3rem; }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item, .timeline-marker { animation: none !important; }
 }
