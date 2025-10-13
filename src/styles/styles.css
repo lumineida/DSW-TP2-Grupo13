@@ -138,14 +138,25 @@ main {
    Footer
    ----------------------- */
 footer {
-  background: var(--text-primary);
-  color: white;
+  background: var(--bg-tertiary); /* Usa la variable de fondo principal */
+  color: var(--text-primary); /* Usa la variable de texto principal */
   padding: 3rem 0 1rem;
   display: flex;
   justify-content: center;
+  border-top: 1px solid var(--border-color); /* Línea superior sutil */
+  transition: background 0.3s, color 0.3s; /* Transición suave */
 }
 
-.footer-content { margin: 0 auto; padding: 0 1rem; }
+.footer-content {
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+  color: var(--text-secondary); /* Texto secundario para mejor contraste */
+}
 
 /* -----------------------
    Team / Member Cards
@@ -346,6 +357,39 @@ footer {
 .lesson-card:hover { transform: translateY(-5px); }
 
 .lesson-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+/* -----------------------
+   Inicio Container
+   ----------------------- */
+.inicio-container {
+  min-height: calc(100vh - 140px); /* Ajusta según la altura de header y footer */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Expandir el Hero para ocupar más espacio */
+.inicio-container .hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.inicio-container .hero-content {
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.inicio-container .hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.inicio-container .hero p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
 
 /* -----------------------
    Breakpoints
