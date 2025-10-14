@@ -11,6 +11,8 @@ import Integrantes from "./pages/Integrantes";
 import Integrante from './pages/Integrante';
 import NotFoundPage from './pages/NotFoundPage';
 import Contacto from "./pages/Contacto";
+import Movies from './pages/Movies';
+import MovieDetail from './pages/MovieDetail';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -36,6 +38,8 @@ function App() {
                 <Route path=":path" element={<Integrante />} />
               </Route>
               <Route path="/bitacora" element={<Bitacora />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/movies/:id" element={<MovieDetail />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

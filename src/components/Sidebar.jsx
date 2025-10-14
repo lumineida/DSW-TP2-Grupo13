@@ -6,9 +6,10 @@ const pages = [
   { path: "/", name: "Inicio", nivel: "1" },
   { path: "/bitacora", name: "Bitácora", nivel: "1" },
   { path: "/integrantes", name: "Integrantes", nivel: "1" },
+  { path: "/movies", name: "Películas", nivel: "1" },
   { path: "/integrantes/marcos", name: "Marcos", nivel: "2" },
   { path: "/integrantes/mariano", name: "Mariano", nivel: "2" },
-  { path: "/integrantes/juan", name: "Juan", nivel: "2" },
+  { path: "/integrantes/julian", name: "Julian", nivel: "2" },
   { path: "/integrantes/cecilia", name: "Cecilia", nivel: "2" },
   { path: "/contacto", name: "Contacto", nivel: "1" },
 ];

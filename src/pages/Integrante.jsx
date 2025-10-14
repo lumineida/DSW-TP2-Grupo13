@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import integrantes from "../data/integrantes";
 import Card from "../components/Card";
-import { Button } from "react-bootstrap";
 
 export default function Integrante() {
 
@@ -62,7 +61,7 @@ export default function Integrante() {
             </div>
         </div>
 
-      <Button variant="primary" onClick={() => navigate("/integrantes")}>Ver todos</Button>
+  <button className="btn btn-primary" onClick={() => navigate("/integrantes")}>Ver todos</button>
     </>
 
   );
