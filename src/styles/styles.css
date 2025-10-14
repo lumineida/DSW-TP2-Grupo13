@@ -362,7 +362,7 @@ footer {
    Inicio Container
    ----------------------- */
 .inicio-container {
-  min-height: calc(100vh - 140px); /* Ajusta según la altura de header y footer */
+  /*min-height: calc(100vh - 140px);*/ /* Ajusta según la altura de header y footer */
   display: flex;
   flex-direction: column;
 }
