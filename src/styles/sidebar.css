@@ -38,6 +38,47 @@
   font-size: 0.97em;
 }
 
+/* Submenu: hidden by default, shown on hover or focus-within */
+.sidebar nav ul .submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+.sidebar nav ul li.parent:hover > .submenu,
+.sidebar nav ul li.parent:focus-within > .submenu,
+.sidebar:hover .submenu {
+  max-height: 500px; /* suficiente para mostrar los hijos */
+  opacity: 1;
+}
+
+/* If parent has class open (e.g., based on route), show submenu */
+.sidebar nav ul li.parent.open > .submenu {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.chevron {
+  margin-left: auto;
+  transition: transform 0.25s ease;
+  font-size: 0.8rem;
+  transform: rotate(0deg);
+}
+
+.sidebar nav ul li.parent.open .chevron,
+.sidebar nav ul li.parent:hover .chevron,
+.sidebar nav ul li.parent:focus-within .chevron {
+  transform: rotate(90deg);
+}
+
+.sidebar nav ul .submenu li {
+  margin-left: 0.75rem;
+}
+
 .sidebar nav a,
 .sidebar nav button {
   display: flex;

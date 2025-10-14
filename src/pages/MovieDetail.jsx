@@ -9,6 +9,7 @@ export default function MovieDetail() {
   const [favorites, setFavorites] = useState(() => {
     try { return JSON.parse(localStorage.getItem('favorites') || '[]'); } catch { return []; }
   });
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     fetch('/data/movies.json')
@@ -29,21 +30,27 @@ export default function MovieDetail() {
     setFavorites((prev) => (prev.includes(movieId) ? prev.filter((x) => x !== movieId) : [...prev, movieId]));
   };
 
-  if (loading) return <div style={{ padding: '2rem' }}>Cargando...</div>;
-  if (!movie) return <div style={{ padding: '2rem' }}>Película no encontrada</div>;
+  if (loading) return <div className="movie-message">Cargando...</div>;
+  if (!movie) return <div className="movie-message">Película no encontrada</div>;
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div className="movie-detail">
       <button className="btn" onClick={() => navigate(-1)}>Volver</button>
-      <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem' }}>
-        <div style={{ flex: '0 0 360px' }}>
-          <img src={movie.image} alt={movie.title} style={{ width: '100%', borderRadius: '12px' }} />
+      <div className="movie-detail__layout">
+        <div className={`movie-detail__poster ${imageLoaded ? 'loaded' : ''}`}>
+          <div className="movie-poster-skeleton" aria-hidden></div>
+          <img
+            src={movie.image}
+            alt={movie.title}
+            className={`movie-poster-image ${imageLoaded ? 'loaded' : ''}`}
+            onLoad={() => setImageLoaded(true)}
+          />
         </div>
-        <div style={{ flex: 1 }}>
-          <h2>{movie.title} <span style={{ color: 'var(--accent-color)', fontSize: '0.9rem' }}>({movie.year})</span></h2>
+        <div className="movie-detail__meta">
+          <h2>{movie.title} <span className="movie-year">({movie.year})</span></h2>
           <p>⭐ {movie.rating}</p>
           <p>{movie.synopsis}</p>
-          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+          <div className={`movie-detail__actions ${imageLoaded ? 'visible' : ''}`}>
             <button className={`btn ${favorites.includes(movie.id) ? 'btn-primary' : ''}`} onClick={() => toggleFavorite(movie.id)}>
               {favorites.includes(movie.id) ? 'Favorita' : 'Favorito'}
             </button>

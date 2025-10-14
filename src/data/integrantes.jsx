@@ -1,6 +1,6 @@
 import fotoMarcos from '../assets/img/marcos.jpeg';
 import fotoMariano from '../assets/img/mariano.png';
-import fotoJuan from '../assets/img/juan.png';
+import fotoJulian from '../assets/img/julian.png';
 import fotoCecilia from '../assets/img/cecilia.jpg';
 
 const integrantes = [
@@ -31,12 +31,12 @@ const integrantes = [
       musica: ["Jazz", "Classical"]
     },
     { 
-      path: "julian", 
+      path: "Julian", 
       nombre: "Julian Benitez", 
       especialidad: "Professional Developer",
       rol: "Professional Developer",
       descripcion: "Enfoque profesional, clean code y optimización de rendimiento",
-      foto: fotoJuan,
+      foto: fotoJulian,
       ciudad: "Buenos Aires, Argentina",    
       edad: 22, 
       habilidades: ["React", "Node.js", "Testing"],

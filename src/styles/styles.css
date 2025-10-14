@@ -458,3 +458,93 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .timeline-item, .timeline-marker { animation: none !important; }
 }
+
+/* -----------------------
+   Movie Detail Styles
+   ----------------------- */
+.movie-message {
+  padding: 2rem;
+}
+
+.movie-detail {
+  padding: 2rem;
+}
+
+.movie-detail__layout {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+.movie-detail__poster {
+  flex: 0 0 420px; /* poster larger to match visual hierarchy */
+}
+
+.movie-poster-image {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+/* When image loads we'll add a class 'loaded' via onLoad */
+.movie-poster-image.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.movie-detail__meta {
+  flex: 1;
+}
+
+.movie-year {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+.movie-detail__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.movie-detail__actions.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .movie-detail__layout {
+    flex-direction: column;
+  }
+  .movie-detail__poster { flex: none; width: 100%; order: -1; }
+}
+
+/* Skeleton placeholder for poster */
+.movie-detail__poster {
+  position: relative;
+}
+
+.movie-poster-skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+  background-size: 400% 100%;
+  border-radius: 12px;
+  animation: shimmer 1.4s linear infinite;
+}
+
+.movie-detail__poster.loaded .movie-poster-skeleton {
+  display: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
