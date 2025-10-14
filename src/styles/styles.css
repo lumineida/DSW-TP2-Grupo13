@@ -64,7 +64,7 @@ body.dark-mode {
 
 main {
   flex: 1;
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 40%, #6d5bff 100%);
   color: var(--text-primary);
 }
 

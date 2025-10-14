@@ -1,9 +1,11 @@
 /* Header */
 header {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: transparent; /* ✅ sin color propio */
   color: white;
   padding: 1rem 0;
-  box-shadow: var(--shadow-lg);
+  box-shadow: none;
+  position: relative;
+  z-index: 2; /* para que quede sobre el fondo */
 }
 
 .header-content {

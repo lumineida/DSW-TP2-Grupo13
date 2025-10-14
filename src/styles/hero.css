@@ -1,17 +1,17 @@
 /* ================================
-   HERO SECTION (aislado del global)
+   HERO SECTION 
    ================================ */
 
 .hero-section {
+  background: transparent; 
+  position: relative;
+  z-index: 2;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #5b6ff5, #7b5bff);
-  color: white;
-  overflow: hidden;
 }
-
 .hero-wrapper {
   display: flex;
   flex-direction: row;
@@ -56,6 +56,8 @@
 .hero-image-container img:hover {
   transform: scale(1.05);
 }
+
+
 
 /* ================================
    Responsive breakpoints
