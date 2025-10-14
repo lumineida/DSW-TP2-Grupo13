@@ -13,6 +13,8 @@ import NotFoundPage from './pages/NotFoundPage';
 import Contacto from "./pages/Contacto";
 import Movies from './pages/Movies';
 import MovieDetail from './pages/MovieDetail';
+import Books from './pages/Books';
+import BookDetail from './pages/BookDetail';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -40,6 +42,8 @@ function App() {
               <Route path="/bitacora" element={<Bitacora />} />
               <Route path="/movies" element={<Movies />} />
               <Route path="/movies/:id" element={<MovieDetail />} />
+              <Route path="/books" element={<Books />} />
+              <Route path="/books/:key" element={<BookDetail />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

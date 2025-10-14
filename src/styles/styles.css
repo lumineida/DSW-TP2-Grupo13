@@ -548,3 +548,105 @@ footer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+/* -----------------------
+   Book Card Styles
+   ----------------------- */
+.book-card .card-image {
+  position: relative;
+}
+
+.book-year-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.book-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0.75rem 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.book-publisher,
+.book-language {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+}
+
+.loading-spinner::before {
+  content: "📚";
+  font-size: 3rem;
+  animation: bounce 1.5s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.error-message {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Book detail specific styles */
+.book-detail .book-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.book-subjects {
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.no-cover-placeholder {
+  font-size: 2rem;
+}
+
+/* Book card aspect ratio for better layout */
+.book-card .card-image img {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+/* Responsive adjustments for books */
+@media (max-width: 600px) {
+  .book-info-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .book-year-badge {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .book-subjects {
+    max-height: 80px;
+  }
+}
