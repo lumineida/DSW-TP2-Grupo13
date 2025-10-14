@@ -31,7 +31,7 @@ const integrantes = [
       musica: ["Jazz", "Classical"]
     },
     { 
-      path: "Julian", 
+      path: "julian", 
       nombre: "Julian Benitez", 
       especialidad: "Professional Developer",
       rol: "Professional Developer",
