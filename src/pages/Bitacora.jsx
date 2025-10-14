@@ -1,11 +1,15 @@
 import React from "react";
 import Hero from "../components/Hero";
+import bitacoraImg from "../assets/img/bitacora.png";
 
 export default function Bitacora() {
   return <div>
 
-    <Hero titulo="Documentación del Proceso" 
-    descripcion="Seguimiento detallado del desarrollo del proyecto frontend." />
+      <Hero 
+        titulo="Documentación del Proceso"
+        descripcion="Seguimiento detallado del desarrollo del proyecto frontend."
+        imagen={bitacoraImg}
+      />
         
     <section className="bitacora-content">
         <div className="container">
