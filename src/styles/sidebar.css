@@ -1,13 +1,20 @@
+/* ================================
+       SIDEBAR BASE STYLES
+   ================================ */
+
 .sidebar {
   background: var(--bg-tertiary);
   border-right: 1px solid var(--border-color);
   padding: 1.5rem 1rem;
   box-shadow: var(--shadow-sm);
-  width: 150px;
-  min-height: 100vh;
+  width: 200px;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .sidebar .logo {
@@ -60,22 +67,88 @@
   font-weight: bold;
 }
 
-.sidebar nav .submenu {
-  padding-left: 0.5rem;
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
+/* ================================
+    MENU TOGGLE BUTTON (HAMBURGUESA)
+   ================================ */
+
+.menu-toggle {
+  display: none;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.9rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  box-shadow: var(--shadow-md);
 }
 
-.sidebar nav .submenu li {
-  margin-bottom: 0.25rem;
+.menu-toggle:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
 }
 
-.sidebar nav .submenu a {
-  font-size: 0.96em;
-  padding-left: 1.5rem;
+/* ================================
+          RESPONSIVE STYLES
+   ================================ */
+
+/* Pantallas medianas (<=900px) */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -220px; /* Oculta fuera de pantalla */
+    width: 200px;
+    height: 100vh;
+    box-shadow: var(--shadow-lg);
+    transition: left 0.3s ease-in-out;
+    background: var(--bg-tertiary);
+  }
+
+  .sidebar.open {
+    left: 0; /* Se muestra el menú */
+  }
+
+  .menu-toggle {
+    display: block; /* Muestra el botón hamburguesa */
+  }
+
+  /* Para evitar que el contenido principal se superponga */
+  main {
+    margin-left: 0 !important;
+    transition: margin-left 0.3s ease;
+  }
 }
 
-.sidebar nav .submenu a.active {
-  background: var(--accent-color);
-  color: #fff;
+/* Pantallas pequeñas (<=400px) */
+@media (max-width: 400px) {
+  .sidebar {
+    width: 170px;
+  }
+
+  .sidebar nav a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .sidebar .logo {
+    width: 60%;
+  }
+
+  .menu-toggle {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Escritorio grande (>=1200px) */
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 220px;
+  }
 }
