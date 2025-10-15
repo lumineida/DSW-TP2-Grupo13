@@ -71,9 +71,9 @@ export default function Books() {
   if (loading) {
     return (
       <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h2>📚 Biblioteca Digital</h2>
+        <h2 style={{ color:'white' }} >📚 Biblioteca Digital</h2>
         <div className="loading-spinner">
-          <p>Cargando libros increíbles... 📖</p>
+          <p style={{ color:'white' }}>Cargando libros increíbles... 📖</p>
         </div>
       </div>
     );
@@ -82,7 +82,7 @@ export default function Books() {
   if (error) {
     return (
       <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h2>📚 Biblioteca Digital</h2>
+        <h2 style={{ color:'white' }} >📚 Biblioteca Digital</h2>
         <div className="error-message" style={{ 
           background: 'var(--error-color)', 
           color: 'white', 
@@ -104,8 +104,8 @@ export default function Books() {
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h2>📚 Biblioteca Digital</h2>
-      <p style={{ marginBottom: '1rem', color: 'var(--text-secondary)' }}>
+      <h2 style={{ color:'white' }}>📚 Biblioteca Digital</h2>
+      <p style={{ marginBottom: '1rem', color: 'white' }}>
         Descubre libros populares de ficción de la biblioteca más grande del mundo
       </p>
       
@@ -169,7 +169,7 @@ export default function Books() {
                   onClick={() => toggleFavorite(book.key)}
                   style={{ flex: '1', minWidth: '100px' }}
                 >
-                  {favorites.includes(book.key) ? '💖 Favorito' : '🤍 Favorito'}
+                  {favorites.includes(book.key) ? '💖 Favorito' : '🤍 Favorito'} 
                 </button>
                 <button 
                   className="btn btn-primary" 

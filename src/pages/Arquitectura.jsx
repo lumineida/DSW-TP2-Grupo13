@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Hero from "../components/Hero";
+import colaboracion from "../assets/img/colaboracion.png";
 
 // Componente para los botones de navegación
 const DiagramSelector = ({ activeView, onViewChange }) => {
@@ -67,7 +68,7 @@ const DiagramViewer = ({ type }) => {
         <h3 style={{ 
           fontSize: '2rem', 
           marginBottom: '1.5rem', 
-          color: 'var(--primary-color)',
+          color: 'white',
           textAlign: 'center'
         }}>
           Árbol de Renderizado de Componentes
@@ -265,9 +266,10 @@ export default function Arquitectura() {
       <Hero 
         titulo="Arquitectura del Proyecto" 
         descripcion="Explora la estructura de componentes React y la organización de carpetas mediante diagramas interactivos." 
+        imagen={colaboracion} 
       />
       
-      <section style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
+      <section className="arquitectura-section">
         
         {/* Selector de Diagramas */}
         <DiagramSelector 

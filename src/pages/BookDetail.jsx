@@ -89,7 +89,7 @@ export default function BookDetail() {
   if (error) return (
     <div className="movie-message">
       <p>{error}</p>
-      <button className="btn btn-primary" onClick={() => navigate('/books')}>
+      <button className="btn btn-primary" onClick={() => navigate('/books')} >
         Volver a Libros
       </button>
     </div>
@@ -101,7 +101,7 @@ export default function BookDetail() {
 
   return (
     <div className="movie-detail book-detail">
-      <button className="btn" onClick={() => navigate('/books')}>
+      <button className="btn-primary" onClick={() => navigate('/books')}>
         ← Volver a Libros
       </button>
       

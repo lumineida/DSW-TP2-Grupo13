@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css"
 import './styles/styles.css'
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";

@@ -35,7 +35,13 @@ export default function MovieDetail() {
 
   return (
     <div className="movie-detail">
-      <button className="btn" onClick={() => navigate(-1)}>Volver</button>
+<button 
+  className="btn-primary" 
+  onClick={() => navigate(-1)}
+
+>
+  ← Volver
+</button>
       <div className="movie-detail__layout">
         <div className={`movie-detail__poster ${imageLoaded ? 'loaded' : ''}`}>
           <div className="movie-poster-skeleton" aria-hidden></div>

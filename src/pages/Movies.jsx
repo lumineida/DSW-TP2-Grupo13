@@ -35,11 +35,11 @@ export default function Movies() {
     setFavorites((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
   };
 
-  if (loading) return <div style={{ padding: '2rem' }}>Cargando películas...</div>;
+  if (loading) return <div style={{ padding: '2rem', color: 'white' }}>Cargando películas...</div>;
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h2>Películas</h2>
+      <h2 style={{ color: 'white' }}>Películas</h2>
       <div className="team-grid">
         {movies.map((m) => (
           <div key={m.id} className="member-card">
@@ -51,8 +51,8 @@ export default function Movies() {
               <p className="member-theme">{m.year} • ⭐ {m.rating}</p>
               <p className="member-description">{m.synopsis}</p>
               <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-                <button className={`btn ${favorites.includes(m.id) ? 'btn-primary' : ''}`} onClick={() => toggleFavorite(m.id)}>
-                  {favorites.includes(m.id) ? 'Favorita' : 'Favorito'}
+                <button className={`btn ${favorites.includes(m.id) ? 'btn-primary' : ''}`} onClick={() => toggleFavorite(m.id)} style={{ minWidth: '100px' }}>
+                  {favorites.includes(m.id) ? '💖 Favorito' : '🤍 Favorito'}  
                 </button>
                 <button className="btn btn-primary" onClick={() => navigate(`/movies/${m.id}`)}>Ver detalles</button>
               </div>
