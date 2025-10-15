@@ -8,9 +8,6 @@ header {
   z-index: 2; /* para que quede sobre el fondo */
 }
 
-.header-content {
-  text-align: center;
-}
 
 .header-content h1 {
   font-weight: 700;
@@ -49,3 +46,38 @@ header {
 }
 
 
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; 
+  text-align: left;
+}
+
+.header-icon {
+  width: 150px; 
+  height: auto;
+  flex-shrink: 0;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+}
+
+.header-text h1 {
+  margin: 0;
+}
+
+
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-text {
+    align-items: center;
+  }
+}
