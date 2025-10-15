@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css"
 import './styles/styles.css'
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
@@ -11,6 +10,11 @@ import Integrantes from "./pages/Integrantes";
 import Integrante from './pages/Integrante';
 import NotFoundPage from './pages/NotFoundPage';
 import Contacto from "./pages/Contacto";
+import Movies from './pages/Movies';
+import MovieDetail from './pages/MovieDetail';
+import Books from './pages/Books';
+import BookDetail from './pages/BookDetail';
+import Arquitectura from './pages/Arquitectura';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -36,6 +40,11 @@ function App() {
                 <Route path=":path" element={<Integrante />} />
               </Route>
               <Route path="/bitacora" element={<Bitacora />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/movies/:id" element={<MovieDetail />} />
+              <Route path="/books" element={<Books />} />
+              <Route path="/books/:key" element={<BookDetail />} />
+              <Route path="/arquitectura" element={<Arquitectura />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

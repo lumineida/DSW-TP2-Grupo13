@@ -31,8 +31,8 @@ const integrantes = [
       musica: ["Depeche Mode",  "Air Supply","New Order"]
     },
     { 
-      path: "juan", 
-      nombre: "Juan Benitez", 
+      path: "julian", 
+      nombre: "Julian Benitez", 
       especialidad: "Desarrollador Profesional",
       rol: "Professional Developer",
       descripcion: "Enfoque profesional, clean code y optimización de rendimiento",
