@@ -652,3 +652,78 @@ footer {
     max-height: 80px;
   }
 }
+
+
+/* -----------------------
+   Arquitectura Responsive
+   ----------------------- */
+.arquitectura-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.arquitectura-section h3 {
+  font-size: 2rem;
+}
+
+.arquitectura-section p,
+.arquitectura-section li {
+  font-size: 1rem;
+}
+
+/* Tarjetas del stack tecnológico */
+.arquitectura-section .stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+  .arquitectura-section {
+    padding: 1rem;
+  }
+
+  .arquitectura-section h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .arquitectura-section p,
+  .arquitectura-section li {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .arquitectura-section .stack-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .arquitectura-section div[style*="padding: 2rem"] {
+    padding: 1rem !important;
+  }
+
+  .component-tree, .folder-structure {
+    font-size: 0.75rem !important;
+    padding: 1rem !important;
+  }
+
+  .arquitectura-section button {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Extra ajuste para pantallas muy pequeñas (<400px) */
+@media (max-width: 400px) {
+  .arquitectura-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .arquitectura-section p,
+  .arquitectura-section li {
+    font-size: 0.85rem;
+  }
+}
