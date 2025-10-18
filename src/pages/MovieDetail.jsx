@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import moviesData from "../data/movies.json";
+
+// Importa dinámicamente todas las imágenes de películas para que Vite las procese.
+const movieImageModules = import.meta.glob('../assets/img/movie*.jpg', { eager: true, as: 'url' });
+const movieImages = Object.fromEntries(Object.entries(movieImageModules).map(([path, url]) => [path.split('/').pop(), url]));
 
 export default function MovieDetail() {
   const { id } = useParams();
@@ -12,14 +17,9 @@ export default function MovieDetail() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    fetch('/data/movies.json')
-      .then((res) => res.json())
-      .then((data) => {
-        const found = data.find((m) => String(m.id) === String(id));
-        setMovie(found);
-        setLoading(false);
-      })
-      .catch((err) => { console.error(err); setLoading(false); });
+    const foundMovie = moviesData.find((m) => String(m.id) === String(id));
+    setMovie(foundMovie);
+    setLoading(false);
   }, [id]);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function MovieDetail() {
         <div className={`movie-detail__poster ${imageLoaded ? 'loaded' : ''}`}>
           <div className="movie-poster-skeleton" aria-hidden></div>
           <img
-            src={movie.image}
+            src={movieImages[movie.image]}
             alt={movie.title}
             className={`movie-poster-image ${imageLoaded ? 'loaded' : ''}`}
             onLoad={() => setImageLoaded(true)}
