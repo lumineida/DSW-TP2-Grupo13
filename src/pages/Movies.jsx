@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import moviesData from "../data/movies.json";
+
+// Importa dinámicamente todas las imágenes de películas.
+// Vite las procesará y nos dará las URLs finales para producción.
+const movieImageModules = import.meta.glob('../assets/img/movie*.jpg', { eager: true, as: 'url' });
+const movieImages = Object.fromEntries(Object.entries(movieImageModules).map(([path, url]) => [path.split('/').pop(), url]));
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
@@ -15,16 +21,8 @@ export default function Movies() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('/data/movies.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Failed to load movies.json', err);
-        setLoading(false);
-      });
+    setMovies(moviesData);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -44,7 +42,7 @@ export default function Movies() {
         {movies.map((m) => (
           <div key={m.id} className="member-card">
             <div className="card-image">
-              <img src={m.image} alt={m.title} loading="lazy" />
+              <img src={movieImages[m.image]} alt={m.title} loading="lazy" />
             </div>
             <div className="card-content">
               <h4 className="member-name">{m.title}</h4>
