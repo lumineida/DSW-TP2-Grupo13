@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Inicio from './pages/Inicio';
-import Bitacora from './pages/bitacora';
+import Bitacora from './pages/Bitacora';
 import Integrantes from "./pages/Integrantes";
 import Integrante from './pages/Integrante';
 import NotFoundPage from './pages/NotFoundPage';
