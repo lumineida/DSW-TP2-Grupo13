@@ -136,6 +136,45 @@ export default function Bitacora() {
                 </div>
               </div>
             </div>
+
+            {/* Nuevas semanas basadas en commits del repositorio */}
+            <div className="timeline-item">
+              <div className="timeline-marker">🔁</div>
+              <div className="timeline-content">
+                <h3>Semana 4: Migracion de proyecto a React</h3>
+                <p className="timeline-date">6 de Octubre 2025</p>
+                <div className="timeline-description">
+                  <h4>Inicialización y estructura del proyecto:</h4>
+                  <ul>
+                    <li>Planificación de la estructura base del proyecto.</li>
+                    <li>Desarrollo de componentes reutilizables (Card, Hero, Sidebar, Header, Footer).</li>
+                    <li>Estilos css basicos en base a diseño del TP1.</li>
+                    <li>Incorporación de rutas y navegación entre páginas. </li>
+                    <li>Barra lateral con menú de navegación.</li>
+                    <li>Establecimiento de un sistema de temas (claro/oscuro).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-marker">📌</div>
+              <div className="timeline-content">
+                <h3>Semana 5: Incorporación de funcionalidades avanzadas</h3>
+                <p className="timeline-date">13 de Octubre 2025</p>
+                <div className="timeline-description">
+                  <h4>Cambios principales:</h4>
+                  <ul>
+                    <li>Incorporación de lectura de datos desde JSON para contenidos dinámicos.</li>
+                    <li>Actualizaciones de estilos y paleta para un look más consistente.</li>
+                    <li>Desarrollo de la página <em>Arquitectura</em> y funcionalidades asociadas.</li>
+                    <li>Integración de libros desde una API.</li>
+                    <li>Actualización de documentación: agregado/ajustes en README y Bitácora.</li>
+                    <li>Pequeños fixes y merges para estabilizar la rama principal antes de la entrega.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
