@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Hero from "../components/Hero";
 import colaboracion from "../assets/img/colaboracion.png";
+import arbolrenderizado from "../assets/img/arbol-renderizado.png";
 
 // Componente para los botones de navegación
 const DiagramSelector = ({ activeView, onViewChange }) => {
   const buttons = [
-    { id: 'components', label: 'Componentes React', icon: '⚛️' },
+    { id: 'components', label: 'Árbol de Renderizado', icon: '⚛️' },
     { id: 'folders', label: 'Estructura de Carpetas', icon: '📁' }
   ];
 
@@ -98,55 +99,9 @@ const DiagramViewer = ({ type }) => {
             borderRadius: 'var(--radius-md)',
             overflow: 'auto'
           }}>
-            <div><strong>App.jsx</strong> (Estado: darkMode, router principal)</div>
-            <div style={{ marginLeft: '20px' }}>├── Router (react-router-dom)</div>
-            <div style={{ marginLeft: '40px' }}>│   ├── Sidebar.jsx</div>
-            <div style={{ marginLeft: '40px' }}>│   ├── Header.jsx</div>
-            <div style={{ marginLeft: '40px' }}>│   ├── Routes</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── / → Inicio.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Hero.jsx</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /integrantes → Integrantes.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   ├── Hero.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Card.jsx (x4)</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /integrantes/:path → Integrante.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Hero.jsx</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /bitacora → Bitacora.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Hero.jsx</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /movies → Movies.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   ├── Hero.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Card.jsx (x20)</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /movies/:id → MovieDetail.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Hero.jsx</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /books → Books.jsx (API: Open Library)</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   ├── Hero.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Card.jsx (x20)</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /books/:key → BookDetail.jsx (API)</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Hero.jsx</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /arquitectura → Arquitectura.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Hero.jsx</div>
-            <div style={{ marginLeft: '60px' }}>│   │   ├── /contacto → Contacto.jsx</div>
-            <div style={{ marginLeft: '80px' }}>│   │   │   └── Hero.jsx</div>
-            <div style={{ marginLeft: '60px' }}>│   │   └── /* → NotFoundPage.jsx</div>
-            <div style={{ marginLeft: '40px' }}>│   └── Footer.jsx</div>
+            <img src={arbolrenderizado} alt="Árbol de Renderizado de Componentes" style={{ width: '100%', height: 'auto' }} />
           </div>
-          
-          <div style={{ 
-            marginTop: '1.5rem', 
-            padding: '1rem', 
-            background: 'var(--bg-tertiary)', 
-            borderRadius: 'var(--radius-md)' 
-          }}>
-            <h5 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>
-              Notas Técnicas:
-            </h5>
-            <ul style={{ color: 'var(--text-secondary)', margin: 0, paddingLeft: '1.5rem' }}>
-              <li><strong>Hero.jsx:</strong> Componente reutilizado en todas las páginas</li>
-              <li><strong>Card.jsx:</strong> Componente genérico para mostrar datos</li>
-              <li><strong>Estado Global:</strong> Dark mode manejado en App.jsx</li>
-              <li><strong>API Externa:</strong> Open Library para libros (sin CORS)</li>
-              <li><strong>SPA:</strong> React Router para navegación sin recarga</li>
-            </ul>
-          </div>
+
         </div>
       </div>
     );
@@ -229,6 +184,7 @@ const DiagramViewer = ({ type }) => {
             <div style={{ marginLeft: '80px' }}>    │       ├── cecilia.jpg</div>
             <div style={{ marginLeft: '80px' }}>    │       ├── movie1-20.jpg</div>
             <div style={{ marginLeft: '80px' }}>    │       └── book-placeholder.svg</div>
+            <div style={{ marginLeft: '80px' }}>    │       └── arbol-renderizado.png</div>
             <div style={{ marginLeft: '40px' }}>    └── data/ (datos estructurados)</div>
             <div style={{ marginLeft: '60px' }}>        └── integrantes.jsx (datos del equipo)</div>
           </div>
